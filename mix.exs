@@ -37,7 +37,6 @@ defmodule ReviveScheduler.MixProject do
       {:ecto_sql, "~> 3.10"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 4.1"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
       # TODO bump on release to {:phoenix_live_view, "~> 1.0.0"},
       {:phoenix_live_view, "~> 1.0.0-rc.1", override: true},
       {:floki, ">= 0.30.0", only: :test},
@@ -52,7 +51,10 @@ defmodule ReviveScheduler.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
       {:quantum, "~> 3.4"},
-      {:crontab, "1.1.14"}
+      {:crontab, "1.1.14"},
+      # Deb dependencies
+      {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:credo, "1.7.8", only: :dev},
     ]
   end
 
