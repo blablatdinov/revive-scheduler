@@ -32,8 +32,8 @@ jobs:
       with:
         elixir-version: '1.15.2'
         otp-version: '26.0'
-    # - name: Set up db
-    #   run: psql -d revive_bot -U almazilaletdinov < .github/setup-db.sql
+    - name: Set up db
+      run: psql -d revive_bot -U almazilaletdinov -h localhost < .github/setup-db.sql
     - name: Restore dependencies cache
       uses: actions/cache@v3
       with:
