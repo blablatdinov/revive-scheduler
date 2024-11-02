@@ -1,5 +1,5 @@
 defmodule ReviveSchedulerWeb.JobController do
-  import Crontab.CronExpression
+  import Crontab
   use ReviveSchedulerWeb, :controller
   alias ReviveScheduler.{Job, Repo}
   require Logger
@@ -14,6 +14,7 @@ defmodule ReviveSchedulerWeb.JobController do
   end
 
   defp create_quantum_job(cron_expression, repo_id) do
+    # credo:disable-for-next-line
     {:ok, parsed_cron} = Crontab.CronExpression.Parser.parse(cron_expression)
     job_name = String.to_atom("analyze repo <#{repo_id}>")
 

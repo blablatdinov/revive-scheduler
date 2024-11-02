@@ -1,4 +1,7 @@
 defmodule ReviveScheduler.Job do
+  @moduledoc """
+  Job table schema
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
