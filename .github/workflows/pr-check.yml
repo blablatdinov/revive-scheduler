@@ -12,6 +12,16 @@ permissions:
 
 jobs:
   build:
+    services:
+      postgres:
+        image: postgres:13.3
+        env:
+          POSTGRES_USER: almazilaletdinov
+          POSTGRES_DB: revive_bot
+          POSTGRES_PASSWORD:
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     name: Build and test
     runs-on: ubuntu-latest
     steps:
@@ -21,6 +31,8 @@ jobs:
       with:
         elixir-version: '1.15.2'
         otp-version: '26.0'
+    - name: Set up db
+      run: psql -d revive_bot -U almazilaletdinov < setup-db.sql
     - name: Restore dependencies cache
       uses: actions/cache@v3
       with:
