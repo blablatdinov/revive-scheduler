@@ -1,11 +1,10 @@
 defmodule ReviveSchedulerWeb.JobController do
   alias Crontab.CronExpression
   use ReviveSchedulerWeb, :controller
-  alias ReviveScheduler.Job
-  alias ReviveScheduler.Repo
+  alias ReviveScheduler.{Job, Repo, PingRepo}
   require Logger
 
-  def create conn, %{"cron_expression" => cron_expression, "repo_id" => repo_id} do
+  def create(conn, %{"cron_expression" => cron_expression, "repo_id" => repo_id}) do
     create_quantum_job(cron_expression, repo_id)
     json(conn, %{status: "Task created"})
   end
@@ -18,10 +17,10 @@ defmodule ReviveSchedulerWeb.JobController do
       ReviveScheduler.Scheduler.new_job()
       |> Quantum.Job.set_name(job_name)
       |> Quantum.Job.set_schedule(parsed_cron)
-      |> Quantum.Job.set_task(fn -> Logger.info("process repo id=#{repo_id}") end)
+      |> Quantum.Job.set_task(fn -> PingRepo.ping(repo_id) end)
       |> ReviveScheduler.Scheduler.add_job()
 
     ReviveScheduler.Scheduler.activate_job(job_name)
-    Logger.info("Task started")
+    Logger.info("Task for repo #{repo_id} started")
   end
 end

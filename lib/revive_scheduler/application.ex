@@ -8,6 +8,7 @@ defmodule ReviveScheduler.Application do
   alias ReviveScheduler.Job
   alias ReviveScheduler.Repo
   alias ReviveScheduler.Scheduler
+  alias ReviveScheduler.PingRepo
 
   require Logger
 
@@ -53,7 +54,7 @@ defmodule ReviveScheduler.Application do
       ReviveScheduler.Scheduler.new_job()
       |> Quantum.Job.set_name(job_name)
       |> Quantum.Job.set_schedule(parsed_cron)
-      |> Quantum.Job.set_task(fn -> Logger.info("process repo id=#{repo_id}") end)
+      |> Quantum.Job.set_task(fn -> PingRepo.ping(repo_id) end)
       |> ReviveScheduler.Scheduler.add_job()
 
     ReviveScheduler.Scheduler.activate_job(job_name)
