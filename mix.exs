@@ -70,6 +70,7 @@ defmodule ReviveScheduler.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
+      lint: ["format", "credo --strict"],
       "assets.setup": ["esbuild.install --if-missing"],
       "assets.build": ["esbuild revive_scheduler"],
       "assets.deploy": [
