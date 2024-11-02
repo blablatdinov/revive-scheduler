@@ -54,7 +54,8 @@ defmodule ReviveScheduler.MixProject do
       {:crontab, "1.1.14"},
       # Deb dependencies
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:credo, "1.7.8", only: :dev}
+      {:credo, "1.7.8", only: :dev},
+      {:recode, "0.7.3", only: :dev}
     ]
   end
 

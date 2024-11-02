@@ -4,8 +4,11 @@ defmodule ReviveScheduler.Application do
   @moduledoc false
 
   use Application
-  alias ReviveScheduler.{Repo, Job, Scheduler}
   alias Crontab.CronExpression
+  alias ReviveScheduler.Job
+  alias ReviveScheduler.Repo
+  alias ReviveScheduler.Scheduler
+
   require Logger
 
   @impl true
@@ -32,7 +35,7 @@ defmodule ReviveScheduler.Application do
     result
   end
 
-  def load_jobs_from_db() do
+  def load_jobs_from_db do
     Repo.all(Job)
     |> Enum.each(fn job ->
       create_quantum_job(
