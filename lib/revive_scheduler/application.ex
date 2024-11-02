@@ -18,7 +18,7 @@ defmodule ReviveScheduler.Application do
       # {ReviveScheduler.Worker, arg},
       # Start to serve requests, typically the last entry
       ReviveSchedulerWeb.Endpoint,
-      ReviveScheduler.Scheduler,
+      ReviveScheduler.Scheduler
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

@@ -52,7 +52,7 @@ defmodule ReviveScheduler.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
       {:quantum, "~> 3.4"},
-      {:crontab, "1.1.14"},
+      {:crontab, "1.1.14"}
     ]
   end
 
