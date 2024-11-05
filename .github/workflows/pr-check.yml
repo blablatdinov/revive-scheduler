@@ -34,6 +34,8 @@ jobs:
         otp-version: '26.0'
     - name: Set up db
       run: psql -d revive_bot -U almazilaletdinov -h localhost < .github/setup-db.sql
+    - name: Set up .env
+      run: cp .github/workflows/.env .env
     - name: Restore dependencies cache
       uses: actions/cache@v3
       with:

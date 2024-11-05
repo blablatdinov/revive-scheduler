@@ -1,7 +1,6 @@
 import Config
 import Dotenvy
 
-# Dotenvy.load()
 source!([".env", System.get_env()])
 
 # config/runtime.exs is executed for all environments, including
@@ -24,11 +23,8 @@ if System.get_env("PHX_SERVER") do
   config :revive_scheduler, ReviveSchedulerWeb.Endpoint, server: true
 end
 
-IO.puts("DATABASE_USERNAME: " <> env!("DATABASE_USERNAME", :string))
-
 # Configure your database
 config :revive_scheduler, ReviveScheduler.Repo,
-  # url: System.get_env("DATABASE_URL"),
   username: env!("DATABASE_USERNAME", :string!),
   password: env!("DATABASE_PASSWORD", :string),
   hostname: env!("DATABASE_HOSTNAME", :string!),
