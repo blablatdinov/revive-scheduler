@@ -56,7 +56,7 @@ defmodule ReviveScheduler.MixProject do
       {:phoenix_live_reload, "1.5.3", only: :dev},
       {:credo, "1.7.8", only: :dev},
       {:recode, "0.7.3", only: :dev},
-      {:floki, "0.36.3", only: :test},
+      {:floki, "0.36.3", only: :test}
     ]
   end
 
