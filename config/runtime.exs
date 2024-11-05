@@ -1,8 +1,8 @@
 import Config
 import Dotenvy
 
-Dotenvy.load()
-# source!([".env", System.get_env()])
+# Dotenvy.load()
+source!([".env", System.get_env()])
 
 # config/runtime.exs is executed for all environments, including
 # during releases. It is executed after compilation and before the
@@ -30,7 +30,7 @@ IO.puts("DATABASE_USERNAME: " <> env!("DATABASE_USERNAME", :string))
 config :revive_scheduler, ReviveScheduler.Repo,
   # url: System.get_env("DATABASE_URL"),
   username: env!("DATABASE_USERNAME", :string!),
-  password: env!("DATABASE_PASSWORD", :string!),
+  password: env!("DATABASE_PASSWORD", :string),
   hostname: env!("DATABASE_HOSTNAME", :string!),
   database: env!("DATABASE_DATABASE", :string!),
   stacktrace: true,
