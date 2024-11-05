@@ -40,3 +40,5 @@ erl_crash.dump
 /installer/deps
 
 # End of https://www.toptal.com/developers/gitignore/api/elixir,phoenix
+
+.env

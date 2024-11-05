@@ -52,6 +52,7 @@ defmodule ReviveScheduler.MixProject do
       {:quantum, "3.5.3"},
       {:crontab, "1.1.14"},
       {:httpoison, "2.2.1"},
+      {:dotenvy, "0.8.0"},
       # Deb dependencies
       {:phoenix_live_reload, "1.5.3", only: :dev},
       {:credo, "1.7.8", only: :dev},
