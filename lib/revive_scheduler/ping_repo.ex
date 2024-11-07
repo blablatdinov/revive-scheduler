@@ -1,5 +1,5 @@
 defmodule ReviveScheduler.PingRepo do
-  @moduledoc"""
+  @moduledoc """
   Ping revive bot for process repo
   """
   alias HTTPoison
