@@ -1,4 +1,7 @@
 defmodule ReviveScheduler.PingRepo do
+  @moduledoc"""
+  Ping revive bot for process repo
+  """
   alias HTTPoison
   require Logger
 
