@@ -6,9 +6,9 @@ defmodule ReviveScheduler.Application do
   use Application
   alias Crontab.CronExpression
   alias ReviveScheduler.Job
+  alias ReviveScheduler.PingRepo
   alias ReviveScheduler.Repo
   alias ReviveScheduler.Scheduler
-  alias ReviveScheduler.PingRepo
 
   require Logger
 
