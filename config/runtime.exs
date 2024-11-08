@@ -122,3 +122,5 @@ if config_env() == :prod do
   #
   # See https://hexdocs.pm/swoosh/Swoosh.html#module-installation for details.
 end
+
+config :revive_scheduler, :revive_app_token env!("REVIVE_TOKEN", :string!)
