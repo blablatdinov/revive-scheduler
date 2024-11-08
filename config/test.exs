@@ -1,16 +1,6 @@
 import Config
 
-# Configure your database
-#
-# The MIX_TEST_PARTITION environment variable can be used
-# to provide built-in test partitioning in CI environment.
-# Run `mix help test` for more information.
 config :revive_scheduler, ReviveScheduler.Repo,
-  username: "almazilaletdinov",
-  password: "",
-  hostname: "localhost",
-  # database: "revive_scheduler_test#{System.get_env("MIX_TEST_PARTITION")}",
-  database: "revive_bot",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: System.schedulers_online() * 2
 
