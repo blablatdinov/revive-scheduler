@@ -29,8 +29,9 @@ defmodule ReviveScheduler.PingRepo do
 
   def ping(repo_id) do
     url = "https://revive-code-bot.ilaletdinov.ru/process-repo/#{repo_id}"
+    revive_app_token = Application.get_env(:revive_scheduler, :revive_app_token)
 
-    case HTTPoison.post(url, "", []) do
+    case HTTPoison.post(url, "", [{"Authorization", "Basic #{revive_app_token}"}]) do
       {:ok, %HTTPoison.Response{status_code: 201}} ->
         Logger.info("Request for process repo <#{repo_id}> sended")
 
