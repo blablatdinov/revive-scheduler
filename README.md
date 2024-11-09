@@ -23,6 +23,13 @@ OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 # ReviveScheduler
 
+![](https://tokei.rs/b1/github/blablatdinov/revive-scheduler)
+[![Hits-of-Code](https://hitsofcode.com/github/blablatdinov/revive-scheduler)](https://hitsofcode.com/github/blablatdinov/revive-scheduler/view)
+
+Scheduler for [revive-bot](https://github.com/blablatdinov/revive-code-bot)
+
+## How to contribute
+
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
