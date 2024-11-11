@@ -43,4 +43,5 @@ defmodule ReviveSchedulerWeb.Gettext do
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
   use Gettext, otp_app: :revive_scheduler
+  # use Gettext.Backend, otp_app: :revive_scheduler
 end

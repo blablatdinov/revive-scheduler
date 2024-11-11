@@ -23,8 +23,6 @@
 defmodule ReviveSchedulerWeb.Router do
   use ReviveSchedulerWeb, :router
 
-  import ReviveSchedulerWeb.JobController
-
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
