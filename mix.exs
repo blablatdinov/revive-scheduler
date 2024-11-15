@@ -61,7 +61,7 @@ defmodule ReviveScheduler.MixProject do
       {:phoenix_html, "4.1.1"},
       # TODO bump on release to {:phoenix_live_view, "~> 1.0.0"},
       {:phoenix_live_view, "1.0.0-rc.7", override: true},
-      {:phoenix_live_dashboard, "0.8.4"},
+      {:phoenix_live_dashboard, "== 0.8.5"},
       {:esbuild, "0.8.2", runtime: Mix.env() == :dev},
       {:swoosh, "== 1.17.3"},
       {:finch, "0.19.0"},
