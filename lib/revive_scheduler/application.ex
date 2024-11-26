@@ -80,7 +80,7 @@ defmodule ReviveScheduler.Application do
       |> ReviveScheduler.Scheduler.add_job()
 
     ReviveScheduler.Scheduler.activate_job(job_name)
-    Logger.info("Task started")
+    Logger.info("Scheduling for repo <#{repo_id}> started from db")
   end
 
   # Tell Phoenix to update the endpoint configuration

@@ -29,9 +29,23 @@ defmodule ReviveSchedulerWeb.JobController do
 
   require Logger
 
-  def create conn, %{"cron_expression" => cron_expression, "repo_id" => repo_id} do
-    create_quantum_job(cron_expression, repo_id)
-    json(conn, %{status: "Task created"})
+  def create_or_update(conn, %{"cron_expression" => cron_expression, "repo_id" => repo_id}) do
+    status =
+      case Repo.get_by(Job, repo_id: repo_id) do
+        nil ->
+          (fn ->
+             create_quantum_job(cron_expression, repo_id)
+             "Task created"
+           end).()
+
+        repo ->
+          (fn ->
+             update_quantum_job(cron_expression, repo_id)
+             "Task updated"
+           end).()
+      end
+
+    json(conn, %{status: status})
   end
 
   defp create_quantum_job(cron_expression, repo_id) do
@@ -46,6 +60,16 @@ defmodule ReviveSchedulerWeb.JobController do
       |> ReviveScheduler.Scheduler.add_job()
 
     ReviveScheduler.Scheduler.activate_job(job_name)
-    Logger.info("Task for repo #{repo_id} started")
+    Logger.info("Task for repo #{repo_id} created")
+  end
+
+  defp update_quantum_job(cron_expression, repo_id) do
+    {:ok, parsed_cron} = CronExpression.Parser.parse(cron_expression)
+    job_name = String.to_atom("analyze repo <#{repo_id}>")
+
+    ReviveScheduler.Scheduler.find_job(job_name)
+    |> Quantum.Job.set_schedule(parsed_cron)
+
+    Logger.info("Task for repo #{repo_id} updated")
   end
 end

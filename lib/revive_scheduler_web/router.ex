@@ -49,7 +49,7 @@ defmodule ReviveSchedulerWeb.Router do
   scope "/api", ReviveSchedulerWeb do
     pipe_through :api
 
-    post "/jobs", JobController, :create
+    put "/jobs", JobController, :create_or_update
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
