@@ -48,7 +48,7 @@ defmodule ReviveScheduler.ApplicationTest do
       )
     )
 
-    %Job{repo_id: 1, cron_expression: "* * * * *"}
+    %Job{repo_id: 1, cron_expression: "* * * * *", files_glob: "**/*"}
     |> Repo.insert!()
 
     ReviveScheduler.Application.load_jobs_from_db()
