@@ -32,11 +32,12 @@ defmodule ReviveScheduler.PingRepo do
     revive_app_token = Application.get_env(:revive_scheduler, :revive_app_token)
 
     case HTTPoison.post(
-      url,
-      "",
-      [{"Authentication", "Basic #{revive_app_token}"}],
-      ["timeout": 300_000, recv_timeout: 300_000]
-    ) do
+           url,
+           "",
+           [{"Authentication", "Basic #{revive_app_token}"}],
+           timeout: 300_000,
+           recv_timeout: 300_000
+         ) do
       {:ok, %HTTPoison.Response{status_code: 201}} ->
         Logger.info("Request for process repo <#{repo_id}> sended")
 
