@@ -27,14 +27,15 @@ defmodule ReviveScheduler.Job do
   use Ecto.Schema
   import Ecto.Changeset
 
-  schema "analyze_jobs_schedules" do
+  schema "repo_configs" do
     field :cron_expression, :string
+    field :files_glob, :string
     field :repo_id, :integer
   end
 
   def changeset(job, attrs) do
     job
-    |> cast(attrs, [:cron_expression, :repo_id])
-    |> validate_required([:cron_expression, :repo_id])
+    |> cast(attrs, [:cron_expression, :files_glob, :repo_id])
+    |> validate_required([:cron_expression, :files_glob, :repo_id])
   end
 end
