@@ -30,16 +30,20 @@ defmodule ReviveSchedulerWeb.JobController do
   require Logger
 
   def create_or_update(conn, %{"cron_expression" => cron_expression, "repo_id" => repo_id}) do
-    status = case Repo.get_by(Job, repo_id: repo_id) do
-      nil -> (fn ->
-        create_quantum_job(cron_expression, repo_id)
-        "Task created"
-      end).()
-      repo -> (fn ->
-        update_quantum_job(cron_expression, repo_id)
-        "Task updated"
-      end).()
-    end
+    status =
+      case Repo.get_by(Job, repo_id: repo_id) do
+        nil ->
+          (fn ->
+             create_quantum_job(cron_expression, repo_id)
+             "Task created"
+           end).()
+
+        repo ->
+          (fn ->
+             update_quantum_job(cron_expression, repo_id)
+             "Task updated"
+           end).()
+      end
 
     json(conn, %{status: status})
   end
