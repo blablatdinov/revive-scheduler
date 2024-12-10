@@ -39,7 +39,9 @@ defmodule ReviveSchedulerWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import ReviveSchedulerWeb.Gettext
+
+  use Gettext,
+    backend: ReviveSchedulerWeb.Gettext
 
   @doc """
   Renders a modal.
