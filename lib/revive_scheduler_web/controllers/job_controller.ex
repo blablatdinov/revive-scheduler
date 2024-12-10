@@ -24,8 +24,8 @@ defmodule ReviveSchedulerWeb.JobController do
   alias Crontab.CronExpression
   use ReviveSchedulerWeb, :controller
   alias ReviveScheduler.PingRepo
-  use Ecto.Repo, otp_app: :revive_scheduler, adapter: Ecto.Adapters.Postgres
   require Logger
+  alias ReviveScheduler.Repo, as: Repo
 
   def create_or_update(conn, %{"cron_expression" => cron_expression, "repo_id" => repo_id}) do
     status =
