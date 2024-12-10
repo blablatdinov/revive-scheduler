@@ -30,7 +30,7 @@ defmodule ReviveScheduler.Application do
   alias ReviveScheduler.Job
   alias ReviveScheduler.PingRepo
   alias ReviveScheduler.Repo
-  use Gettext, backend: MyApp.Gettext
+  use Gettext, backend: ReviveScheduler.Gettext
 
   require Logger
 
