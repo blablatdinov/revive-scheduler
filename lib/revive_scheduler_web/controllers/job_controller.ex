@@ -23,9 +23,12 @@
 defmodule ReviveSchedulerWeb.JobController do
   alias Crontab.CronExpression
   use ReviveSchedulerWeb, :controller
+  alias ReviveScheduler.Job
   alias ReviveScheduler.PingRepo
+  alias ReviveScheduler.Repo
+
   require Logger
-  alias ReviveScheduler.Repo, as: Repo
+
 
   def create_or_update(conn, %{"cron_expression" => cron_expression, "repo_id" => repo_id}) do
     status =
