@@ -65,7 +65,9 @@ defmodule ReviveSchedulerWeb do
         layouts: [html: ReviveSchedulerWeb.Layouts]
 
       import Plug.Conn
-      import ReviveSchedulerWeb.Gettext
+
+      use Gettext,
+        backend: ReviveSchedulerWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -107,7 +109,9 @@ defmodule ReviveSchedulerWeb do
       import Phoenix.HTML
       # Core UI components and translation
       import ReviveSchedulerWeb.CoreComponents
-      import ReviveSchedulerWeb.Gettext
+
+      use Gettext,
+        backend: ReviveSchedulerWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
