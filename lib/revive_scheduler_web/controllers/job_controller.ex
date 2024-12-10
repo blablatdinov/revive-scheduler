@@ -29,7 +29,6 @@ defmodule ReviveSchedulerWeb.JobController do
 
   require Logger
 
-
   def create_or_update(conn, %{"cron_expression" => cron_expression, "repo_id" => repo_id}) do
     status =
       case Repo.get_by(Job, repo_id: repo_id) do
