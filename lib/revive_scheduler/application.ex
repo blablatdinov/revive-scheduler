@@ -30,7 +30,7 @@ defmodule ReviveScheduler.Application do
   alias ReviveScheduler.Job
   alias ReviveScheduler.PingRepo
   alias ReviveScheduler.Repo
-  alias ReviveScheduler.Scheduler
+  use Gettext, backend: ReviveScheduler.Gettext
 
   require Logger
 
@@ -72,12 +72,11 @@ defmodule ReviveScheduler.Application do
     {:ok, parsed_cron} = CronExpression.Parser.parse(cron_expression)
     job_name = String.to_atom("analyze repo <#{repo_id}>")
 
-    job =
-      ReviveScheduler.Scheduler.new_job()
-      |> Quantum.Job.set_name(job_name)
-      |> Quantum.Job.set_schedule(parsed_cron)
-      |> Quantum.Job.set_task(fn -> PingRepo.ping(repo_id) end)
-      |> ReviveScheduler.Scheduler.add_job()
+    ReviveScheduler.Scheduler.new_job()
+    |> Quantum.Job.set_name(job_name)
+    |> Quantum.Job.set_schedule(parsed_cron)
+    |> Quantum.Job.set_task(fn -> PingRepo.ping(repo_id) end)
+    |> ReviveScheduler.Scheduler.add_job()
 
     ReviveScheduler.Scheduler.activate_job(job_name)
     Logger.info("Scheduling for repo <#{repo_id}> started from db")

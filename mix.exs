@@ -67,7 +67,7 @@ defmodule ReviveScheduler.MixProject do
       {:finch, "0.19.0"},
       {:telemetry_metrics, "1.0.0"},
       {:telemetry_poller, "1.1.0"},
-      {:gettext, "== 0.26.2"},
+      {:gettext, "0.26.2"},
       {:jason, "1.4.4"},
       {:dns_cluster, "0.1.3"},
       {:bandit, "== 1.6.1"},
@@ -79,7 +79,8 @@ defmodule ReviveScheduler.MixProject do
       {:phoenix_live_reload, "1.5.3", only: :dev},
       {:credo, "== 1.7.10", only: :dev},
       {:recode, "0.7.3", only: :dev},
-      {:floki, "== 0.37.0", only: :test}
+      {:floki, "== 0.37.0", only: :test},
+      {:igniter, "0.4.1", only: :dev}
     ]
   end
 
