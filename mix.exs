@@ -63,7 +63,7 @@ defmodule ReviveScheduler.MixProject do
       {:phoenix_live_view, "== 1.0.1", override: true},
       {:phoenix_live_dashboard, "== 0.8.5"},
       {:esbuild, "0.8.2", runtime: Mix.env() == :dev},
-      {:swoosh, "== 1.17.4"},
+      {:swoosh, "== 1.17.5"},
       {:finch, "0.19.0"},
       {:telemetry_metrics, "1.0.0"},
       {:telemetry_poller, "1.1.0"},
