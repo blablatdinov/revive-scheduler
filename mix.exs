@@ -58,7 +58,7 @@ defmodule ReviveScheduler.MixProject do
       {:phoenix_ecto, "4.6.3"},
       {:ecto_sql, "3.12.1"},
       {:postgrex, "== 0.19.3"},
-      {:phoenix_html, "4.1.1"},
+      {:phoenix_html, "== 4.2.0"},
       # TODO bump on release to {:phoenix_live_view, "~> 1.0.0"},
       {:phoenix_live_view, "== 1.0.1", override: true},
       {:phoenix_live_dashboard, "== 0.8.6"},
