@@ -65,7 +65,7 @@ defmodule ReviveScheduler.MixProject do
       {:esbuild, "0.8.2", runtime: Mix.env() == :dev},
       {:swoosh, "== 1.17.6"},
       {:finch, "0.19.0"},
-      {:telemetry_metrics, "1.0.0"},
+      {:telemetry_metrics, "== 1.1.0"},
       {:telemetry_poller, "1.1.0"},
       {:gettext, "0.26.2"},
       {:jason, "1.4.4"},
