@@ -55,32 +55,32 @@ defmodule ReviveScheduler.MixProject do
   defp deps do
     [
       {:phoenix, "== 1.7.18"},
-      {:phoenix_ecto, "4.6.3"},
-      {:ecto_sql, "3.12.1"},
+      {:phoenix_ecto, "== 4.6.3"},
+      {:ecto_sql, "== 3.12.1"},
       {:postgrex, "== 0.19.3"},
       {:phoenix_html, "== 4.2.0"},
       # TODO bump on release to {:phoenix_live_view, "~> 1.0.0"},
       {:phoenix_live_view, "== 1.0.2", override: true},
       {:phoenix_live_dashboard, "== 0.8.6"},
-      {:esbuild, "0.8.2", runtime: Mix.env() == :dev},
+      {:esbuild, "== 0.8.2", runtime: Mix.env() == :dev},
       {:swoosh, "== 1.17.6"},
-      {:finch, "0.19.0"},
+      {:finch, "== 0.19.0"},
       {:telemetry_metrics, "== 1.1.0"},
-      {:telemetry_poller, "1.1.0"},
-      {:gettext, "0.26.2"},
-      {:jason, "1.4.4"},
-      {:dns_cluster, "0.1.3"},
+      {:telemetry_poller, "== 1.1.0"},
+      {:gettext, "== 0.26.2"},
+      {:jason, "== 1.4.4"},
+      {:dns_cluster, "== 0.1.3"},
       {:bandit, "== 1.6.5"},
-      {:quantum, "3.5.3"},
-      {:crontab, "1.1.14"},
-      {:httpoison, "2.2.1"},
+      {:quantum, "== 3.5.3"},
+      {:crontab, "== 1.1.14"},
+      {:httpoison, "== 2.2.1"},
       {:dotenvy, "== 1.0.0"},
       # Deb dependencies
-      {:phoenix_live_reload, "1.5.3", only: :dev},
+      {:phoenix_live_reload, "== 1.5.3", only: :dev},
       {:credo, "== 1.7.11", only: :dev},
-      {:recode, "0.7.3", only: :dev},
+      {:recode, "== 0.7.3", only: :dev},
       {:floki, "== 0.37.0", only: :test},
-      {:igniter, "0.4.1", only: :dev}
+      {:igniter, "== 0.4.1", only: :dev}
     ]
   end
 
