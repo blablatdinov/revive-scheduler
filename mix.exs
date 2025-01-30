@@ -70,7 +70,7 @@ defmodule ReviveScheduler.MixProject do
       {:gettext, "== 0.26.2"},
       {:jason, "== 1.4.4"},
       {:dns_cluster, "== 0.1.3"},
-      {:bandit, "== 1.6.6"},
+      {:bandit, "== 1.6.7"},
       {:quantum, "== 3.5.3"},
       {:crontab, "== 1.1.14"},
       {:httpoison, "== 2.2.1"},
