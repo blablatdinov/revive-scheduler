@@ -77,7 +77,7 @@ defmodule ReviveScheduler.MixProject do
       {:dotenvy, "== 1.1.0"},
       # Deb dependencies
       {:phoenix_live_reload, "== 1.6.0", only: :dev},
-      {:credo, "== 1.7.11", only: :dev},
+      {:credo, "== 1.7.12", only: :dev},
       {:recode, "== 0.7.3", only: :dev},
       {:floki, "== 0.37.1", only: :test},
       {:igniter, "== 0.4.1", only: :dev}
