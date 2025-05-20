@@ -60,7 +60,7 @@ defmodule ReviveScheduler.MixProject do
       {:postgrex, "== 0.20.0"},
       {:phoenix_html, "== 4.2.1"},
       # TODO bump on release to {:phoenix_live_view, "~> 1.0.0"},
-      {:phoenix_live_view, "== 1.0.11", override: true},
+      {:phoenix_live_view, "== 1.0.12", override: true},
       {:phoenix_live_dashboard, "== 0.8.7"},
       {:esbuild, "== 0.9.0", runtime: Mix.env() == :dev},
       {:swoosh, "== 1.19.1"},
