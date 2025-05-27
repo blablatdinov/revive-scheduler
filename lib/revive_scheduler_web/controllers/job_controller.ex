@@ -33,16 +33,12 @@ defmodule ReviveSchedulerWeb.JobController do
     status =
       case Repo.get_by(Job, repo_id: repo_id) do
         nil ->
-          (fn ->
-             create_quantum_job(cron_expression, repo_id)
-             "Task created"
-           end).()
+          create_quantum_job(cron_expression, repo_id)
+          "Task created"
 
         _ ->
-          (fn ->
-             update_quantum_job(cron_expression, repo_id)
-             "Task updated"
-           end).()
+          update_quantum_job(cron_expression, repo_id)
+          "Task updated"
       end
 
     json(conn, %{status: status})
