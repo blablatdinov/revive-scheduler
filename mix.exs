@@ -80,7 +80,7 @@ defmodule ReviveScheduler.MixProject do
       {:credo, "== 1.7.12", only: :dev},
       {:recode, "== 0.7.3", only: :dev},
       {:floki, "== 0.37.1", only: :test},
-      {:igniter, "== 0.4.1", only: :dev}
+      {:igniter, "== 0.6.2", only: :dev}
     ]
   end
 
