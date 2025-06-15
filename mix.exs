@@ -79,7 +79,7 @@ defmodule ReviveScheduler.MixProject do
       {:phoenix_live_reload, "== 1.6.0", only: :dev},
       {:credo, "== 1.7.12", only: :dev},
       {:recode, "== 0.7.3", only: :dev},
-      {:floki, "== 0.37.1", only: :test},
+      {:floki, "== 0.38.0", only: :test},
       {:igniter, "== 0.4.1", only: :dev}
     ]
   end
