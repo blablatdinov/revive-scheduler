@@ -72,7 +72,7 @@ defmodule ReviveScheduler.MixProject do
       {:dns_cluster, "== 0.2.0"},
       {:bandit, "== 1.7.0"},
       {:quantum, "== 3.5.3"},
-      {:crontab, "== 1.1.14"},
+      {:crontab, "== 1.2.0"},
       {:httpoison, "== 2.2.3"},
       {:dotenvy, "== 1.1.0"},
       # Deb dependencies
